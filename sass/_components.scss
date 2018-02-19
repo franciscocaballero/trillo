@@ -3,22 +3,58 @@
 
 .logo {
   height: 3.25rem;
+  margin-left: 3rem;
 }
 
 /////////////////////////////////////////////////////////////
 ///SEARCH
 
 .search{
-
+  flex: 0 0 40%; //grow 0 shrink 0 take up 40% of header
+  display: flex;
+  align-items: center; // centers items along cros axis
+  justify-content: center; //centers items along main axis
   &__input{
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    // inputs do not automaticallt inherit font props
+    background-color: var(--color-grey-light-2);
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    transition: all .2s;
+    margin-right: -3.25rem;
+    //^moves button on top of input
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: var(--color-grey-light-3);
+    }
 
+    &::-webkit-input-placeholder{
+      font-weight: 100;
+      color: var(--color-grey-light-4);
+    }
   }
-  &__button{
 
+  &__button{
+    border: none;
+    background-color: var(--color-grey-light-2);
+    &:focus {
+      outline: none;
+      background-color: var(--color-grey-light-3);
+
+    }
+    &:active{
+      transform: translateY(2px);
+    }
   }
   &__icon {
     height: 2rem;
     width: 2rem;
+    fill: var(--color-grey-dark-3);
   }
 }
 
@@ -26,7 +62,8 @@
 /////////////////////////////////////////////////////////////
 /// USER NAVIGATION
 .user-nav {
-  &__icon-box{
+background-color: greenyellow;
+ &__icon-box{
 
   }
 
