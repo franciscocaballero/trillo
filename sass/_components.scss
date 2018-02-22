@@ -14,6 +14,13 @@
   display: flex;
   align-items: center; // centers items along cros axis
   justify-content: center; //centers items along main axis
+
+  @media only screen and (max-width: $bp-smallest) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--color-grey-light-2);
+  }
+
   &__input{
     font-family: inherit;
     font-size: inherit;
@@ -26,6 +33,7 @@
     width: 90%;
     transition: all .2s;
     margin-right: -3.25rem;
+
     //^moves button on top of input
     &:focus {
       outline: none;
@@ -183,6 +191,11 @@
       justify-content: center;
       padding: 2rem;
     }
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1.5rem .5rem;
+    }
   }
 
   &__icon{
@@ -190,6 +203,13 @@
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor; //gives the same color of the parent element
+
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+      margin-bottom: 7px;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -240,6 +260,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars{
@@ -276,13 +301,23 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    @media only screen and (max-width: $bp-small) {
+        padding: 0 1.5rem;
+    }
   }
   &__rating-average {
     font-size: 1.8rem;
     font-weight: 100;
     margin-bottom: -3px;
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+    }
   }
   &__rating-count {
+    @media only screen and (max-width: $bp-small) {
+      font-size: .5rem;
+    }
   }
 }
 
