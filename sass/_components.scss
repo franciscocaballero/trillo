@@ -388,17 +388,22 @@
     width: 1rem;
 
     //older browers
-    // background-image: url(../img/chevron-thin-right.svg);
-    // background-size: cover;
+    background-image: url(../img/chevron-thin-right.svg);
+    background-size: cover;
 
     //Newer browser - mask
-    background-color: var(--color-primary);
-    -webkit-mask-image: url(../img/chevron-thin-right.svg);
-    -webkit-mask-size: cover;
-    mask-image: url(../img/chevron-thin-right.svg);
-    mask-size: cover;
-    ///^mask allows you to set up a element with a color and 'mask'
-  // the element  with a image that let you see through it in order to change the color
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+
+      background-color: var(--color-primary);
+      -webkit-mask-image: url(../img/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      mask-image: url(../img/chevron-thin-right.svg);
+      mask-size: cover;
+      ///^mask allows you to set up a element with a color and 'mask'
+      // the element  with a image that let you see through it in order to change the color
+      background-image: none;
+    }
+
   }
 }
 
