@@ -27,6 +27,10 @@ Primary dark: #BA265D
 
 }
 
+$bp-largest: 75em; //1200px 1200/16
+$bp-large: 68.75em; //1100px
+$bp-medium: 56.25em; //900px
+
 *{
   margin: 0;
   padding: 0;
@@ -40,6 +44,10 @@ Primary dark: #BA265D
 html{
   box-sizing: border-box;
   font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+
+  @media  only screen and (max-width: $bp-large){
+    font-size: 50%; // 8/16 = 0.5 or 50%
+  }
 }
 
 body {
